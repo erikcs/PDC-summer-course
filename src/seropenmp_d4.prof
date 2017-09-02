@@ -1,0 +1,289 @@
+CrayPat/X:  Version 6.2.1 Revision 13075 (xf 13045)  08/27/14 12:39:06
+
+Number of PEs (MPI ranks):    1
+                           
+Numbers of PEs per Node:      1
+                           
+Numbers of Threads per PE:   32
+                           
+Number of Cores per Socket:  16
+
+Execution start time:  Thu Sep  3 16:40:38 2015
+
+System name and speed:  beskow-login2.pdc.kth.se 2301 MHz
+
+Current path to data file:
+  /cfs/klemming/nobackup/d/davlars/Lab7/seropenmp_david4+pat+39113-221s.ap2  (RTS)
+
+
+Notes for table 1:
+
+  Table option:
+    -O samp_profile
+  Options implied by table option:
+    -d sa%@0.95,sa,imb_sa,imb_sa% -b gr,fu,th=HIDE
+
+  Options for related tables:
+    -O samp_profile+src    
+
+  The Total value for Samp is the sum for the Group values.
+  The Group value for Samp is the sum for the Function values.
+  The Function value for Samp is the select0 for the Thread values.
+    (To specify different aggregations, see: pat_help report options s1)
+  This table shows only lines with Samp% > 0.95.
+    (To set thresholds to zero, specify:  -T)
+
+  Imbalance percentages are relative to a set of threads or PEs.
+  Other percentages at each level are of the Total for the program.
+    (For percentages relative to next level up, specify:
+      -s percent=r[elative])
+
+  To make the profile easier to interpret, some samples are attributed
+  to a caller that is either a user defined function, or a library
+  function called directly by a user defined function.  To disable this
+  adjustment, and show functions actually sampled, use the -P option.
+  
+  The following groups were pruned due to thresholding:
+    IO, PTHREAD, STDIO
+
+Table 1:  Profile by Function
+
+  Samp% |  Samp | Imb. |  Imb. |Group
+        |       | Samp | Samp% | Function
+        |       |      |       |  Thread=HIDE
+       
+ 100.0% | 392.0 |   -- |    -- |Total
+|----------------------------------------------------
+|  60.7% | 238.0 |   -- |    -- |ETC
+||---------------------------------------------------
+|  60.2% | 236.0 | 70.4 | 19.2% | main
+||===================================================
+|  38.3% | 150.0 |   -- |    -- |OMP
+||---------------------------------------------------
+|  38.0% | 149.0 |   -- |    -- | _cray$mt_join_barrier
+|====================================================
+
+Notes for table 2:
+
+  Table option:
+    -O samp_profile+src
+  Options implied by table option:
+    -d sa%@0.95,sa,imb_sa,imb_sa% -b gr,fu,so,li,th=HIDE
+
+  Options for related tables:
+    -O samp_profile        
+
+  The Total value for Samp is the sum for the Group values.
+  The Group value for Samp is the sum for the Function values.
+  The Function value for Samp is the sum for the Source values.
+  The Source value for Samp is the sum for the Line values.
+  The Line value for Samp is the select0 for the Thread values.
+    (To specify different aggregations, see: pat_help report options s1)
+  This table shows only lines with Samp% > 0.95.
+    (To set thresholds to zero, specify:  -T)
+
+  Imbalance percentages are relative to a set of threads or PEs.
+  Other percentages at each level are of the Total for the program.
+    (For percentages relative to next level up, specify:
+      -s percent=r[elative])
+
+  To make the profile easier to interpret, some samples are attributed
+  to a caller that is either a user defined function, or a library
+  function called directly by a user defined function.  To disable this
+  adjustment, and show functions actually sampled, use the -P option.
+  
+  The following groups were pruned due to thresholding:
+    IO, PTHREAD, STDIO
+
+Table 2:  Profile by Group, Function, and Line
+
+  Samp% |  Samp | Imb. |  Imb. |Group
+        |       | Samp | Samp% | Function
+        |       |      |       |  Source
+        |       |      |       |   Line
+        |       |      |       |    Thread=HIDE
+       
+ 100.0% | 392.0 |   -- |    -- |Total
+|----------------------------------------------------------------
+|  60.7% | 238.0 |   -- |    -- |ETC
+||---------------------------------------------------------------
+|  60.2% | 236.0 |   -- |    -- | main
+3        |       |      |       |  d/davlars/Lab7/seropenmp_david4.c
+||||-------------------------------------------------------------
+4|||   2.6% |  10.0 |  5.6 | 58.5% |line.124
+4|||  16.3% |  64.0 | 16.2 | 25.3% |line.126
+4|||   6.9% |  27.0 | 14.2 | 34.2% |line.134
+4|||  11.2% |  44.0 | 38.8 | 35.1% |line.135
+4|||   2.0% |   8.0 |  7.9 | 45.2% |line.136
+4|||  15.8% |  62.0 | 39.8 | 32.6% |line.137
+4|||   3.1% |  12.0 |  9.2 | 26.5% |line.139
+4|||   1.5% |   6.0 |  4.7 | 37.0% |line.140
+||||=============================================================
+||===============================================================
+|  38.3% | 150.0 |   -- |    -- |OMP
+||---------------------------------------------------------------
+|  38.0% | 149.0 |   -- |    -- | _cray$mt_join_barrier
+|================================================================
+
+Notes for table 3:
+
+  Table option:
+    -O hwpc
+  Options implied by table option:
+    -d P -b th=HIDE
+
+  The Total value for each data item is the select0 for the Thread values.
+    (To specify different aggregations, see: pat_help report options s1)
+
+Table 3:  Program HW Performance Counter Data
+
+Thread=HIDE
+
+  
+===============================================================
+  Total
+---------------------------------------------------------------
+  CPU_CLK_THREAD_UNHALTED:REF_XCLK                 384185389 
+  CPU_CLK_THREAD_UNHALTED:THREAD_P               10744910086 
+  DTLB_LOAD_MISSES:MISS_CAUSES_A_WALK                   4306 
+  DTLB_STORE_MISSES:MISS_CAUSES_A_WALK                 75082 
+  L1D:REPLACEMENT                                   95818693 
+  L2_RQSTS:ALL_DEMAND_DATA_RD                        2843587 
+  L2_RQSTS:DEMAND_DATA_RD_HIT                        1549424 
+  MEM_UOPS_RETIRED:ALL_LOADS                      3397060866 
+  PM_ENERGY:NODE                  272.959 /sec          1071 J
+  User time (approx)                3.924 secs    9028364747 cycles
+  CPU_CLK                           2.797GHz                 
+  TLB utilization                42790.61 refs/miss   83.575 avg uses
+  D1 cache hit,miss ratios          97.2% hits          2.8% misses
+  D1 cache utilization (misses)     35.45 refs/miss    4.432 avg hits
+  D2 cache hit,miss ratio           98.6% hits          1.4% misses
+  D1+D2 cache hit,miss ratio       100.0% hits          0.0% misses
+  D1+D2 cache utilization         2624.91 refs/miss  328.114 avg hits
+  D2 to D1 bandwidth               44.234MiB/sec   181989568 bytes
+
+Notes for table 4:
+
+  Table option:
+    -O program_time
+  Options implied by table option:
+    -d pt,hm -b th
+
+  The Total value for Process HiMem (MBytes), Process Time is the select0 for the Thread values.
+    (To specify different aggregations, see: pat_help report options s1)
+  The value shown for Process HiMem is calculated from information in
+  the /proc/self/numa_maps files captured near the end of the program. 
+  It is the total size of all pages, including huge pages, that were
+  actually mapped into physical memory from both private and shared
+  memory segments.
+
+Table 4:  Wall Clock Time, Memory High Water Mark
+
+  Process |  Process |Thread
+     Time |    HiMem |
+          | (MBytes) |
+         
+ 3.987564 |  312.070 |Total
+|-----------------------------
+| 3.987564 |  312.070 |thread.0
+|=============================
+
+========================  Additional details  ========================
+
+Experiment:  samp_cs_time
+
+Sampling interval:  10000 microsecs
+
+Original path to data file:
+  /cfs/klemming/nobackup/d/davlars/Lab7/seropenmp_david4+pat+39113-221s.xf  (RTS)
+
+Original program:  /cfs/klemming/nobackup/d/davlars/Lab7/seropenmp_david4
+
+Instrumented with:  pat_build seropenmp_david4 
+
+  Option file "apa" contained:
+    -Drtenv=PAT_RT_PERFCTR=default_samp
+    -Drtenv=PAT_RT_EXPERIMENT=samp_cs_time
+    -Drtenv=PAT_RT_SAMPLING_MODE=3
+    -g upc
+    -g caf
+    -g mpi
+    -g shmem
+    -g syscall
+
+Instrumented program:  ./seropenmp_david4+pat
+
+Program invocation:  ./seropenmp_david4+pat 5000 300 
+
+Exit Status:  0 for 1 PE
+
+Intel haswell CPU  Family:  6  Model: 63  Stepping:  2
+
+Memory pagesize:  4 KiB
+
+Memory hugepagesize:  0 B
+
+Programming environment:  CRAY
+
+Runtime environment variables:
+  ATP_HOME=/opt/cray/atp/1.7.5
+  ATP_MRNET_COMM_PATH=/opt/cray/atp/1.7.5/bin/atp_mrnet_commnode_wrapper
+  ATP_POST_LINK_OPTS=-Wl,-L/opt/cray/atp/1.7.5/lib/ 
+  CRAYOS_VERSION=5
+  CRAYPE_VERSION=2.2.1
+  CRAY_BINUTILS_VERSION=/opt/cray/cce/8.3.4
+  CRAY_CC_VERSION=8.3.4
+  CRAY_FTN_VERSION=8.3.4
+  CRAY_LIBSCI_VERSION=13.0.1
+  LIBSCI_VERSION=13.0.1
+  MODULE_VERSION=3.2.6.7
+  MODULE_VERSION_STACK=3.2.6.7
+  MPICH_ABORT_ON_ERROR=1
+  MPICH_DIR=/opt/cray/mpt/7.0.4/gni/mpich2-cray/83
+  OMP_NUM_THREADS=32
+  PATH=/opt/cray/perftools/6.2.1/bin:/opt/cray/papi/5.3.2/bin:/pdc/vol/slurm/utils/0.0/bin:/opt/pdc.kth.se/heimdal/1.5.2/bin:/opt/pdc.kth.se/heimdal/1.5.2/sbin:/opt/pdc.kth.se/openafs/1.6.10-3.0.101-0.35.1_1.0502.8640-cray_ari_s/bin:/opt/pdc.kth.se/openafs/1.6.10-3.0.101-0.35.1_1.0502.8640-cray_ari_s/sbin:/opt/pdc.kth.se/openssh/5.3p1-with-pam-gsskex-20100124/bin:/opt/slurm/14.11.5/bin:/opt/cray/mpt/7.0.4/gni/bin:/opt/cray/atp/1.7.5/bin:/opt/cray/rca/1.0.0-2.0502.57212.2.56.ari/bin:/opt/cray/pmi/5.0.5-1.0000.10300.134.8.ari/bin:/opt/cray/cce/8.3.4/cray-binutils/x86_64-unknown-linux-gnu/bin:/opt/cray/cce/8.3.4/craylibs/x86-64/bin:/opt/cray/cce/8.3.4/cftn/bin:/opt/cray/cce/8.3.4/CC/bin:/opt/cray/craype/2.2.1/bin:/opt/cray/llm/default/bin:/opt/cray/llm/default/etc:/opt/cray/xpmem/0.1-2.0502.57015.1.15.ari/bin:/opt/cray/ugni/6.0-1.0502.10245.9.9.ari/bin:/opt/cray/udreg/2.3.2-1.0502.9889.2.20.ari/bin:/opt/cray/lustre-cray_ari_s/2.5_3.0.101_0.35.1_1.0502.8640.15.1-1.0502.18911.12.4/sbin:/opt/cray/lustre-cray_ari_s/2.5_3.0.101_0.35.1_1.0502.8640.15.1-1.0502.18911.12.4/bin:/opt/cray/alps/5.2.3-2.0502.9295.14.14.ari/sbin:/opt/cray/alps/5.2.3-2.0502.9295.14.14.ari/bin:/opt/cray/sdb/1.0-1.0502.58450.3.27.ari/bin:/opt/cray/nodestat/2.2-1.0502.58998.2.7.ari/bin:/opt/modules/3.2.6.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/X11R6/bin:/usr/games:/usr/lib/mit/bin:/usr/lib/mit/sbin:/usr/lib/qt3/bin:/opt/cray/bin
+  PAT_BUILD_PAPI_BASEDIR=/opt/cray/papi/5.3.2
+  PAT_REPORT_PRUNE_NAME=_cray$mt_start_,__cray_hwpc_,f_cray_hwpc_,cstart,__pat_,pat_region_,PAT_,OMP.slave_loop,slave_entry,_new_slave_entry,__libc_start_main,_start,__start,start_thread,__wrap_,UPC_ADIO_,_upc_,upc_,__caf_,__pgas_,syscall
+  PAT_RT_EXPERIMENT=samp_cs_time
+  PAT_RT_PERFCTR=default_samp
+  PAT_RT_SAMPLING_MODE=3
+  PERFTOOLS_VERSION=6.2.1
+  XTOS_VERSION=5.2.56
+
+Report time environment variables:
+    CRAYPAT_ROOT=/opt/cray/perftools/6.2.1
+    PAT_REPORT_PRUNE_NAME=_cray$mt_start_,__cray_hwpc_,f_cray_hwpc_,cstart,__pat_,pat_region_,PAT_,OMP.slave_loop,slave_entry,_new_slave_entry,__libc_start_main,_start,__start,start_thread,__wrap_,UPC_ADIO_,_upc_,upc_,__caf_,__pgas_,syscall
+
+Report command line options:  <none>
+
+Operating system:
+  Linux 3.0.101-0.35.1_1.0502.8640-cray_ari_c #1 SMP Wed Feb 18 05:13:50 UTC 2015
+
+Hardware performance counter events:
+   CPU_CLK_THREAD_UNHALTED:REF_XCLK      Count core clock cycles whenever the clock signal on the specificcore is running (not halted):Cases when the core is unhalted at 100Mhz
+   CPU_CLK_THREAD_UNHALTED:THREAD_P      Count core clock cycles whenever the clock signal on the specificcore is running (not halted):Cycles when thread is not halted
+   DTLB_LOAD_MISSES:MISS_CAUSES_A_WALK   Data TLB load misses:Misses in all DTLB levels that cause page walks
+   DTLB_STORE_MISSES:MISS_CAUSES_A_WALK  Data TLB store misses:Misses in all DTLB levels that cause page walks
+   L1D:REPLACEMENT                       L1D cache:L1D Data line replacements
+   L2_RQSTS:ALL_DEMAND_DATA_RD           L2 requests:Any data read request to L2 cache
+   L2_RQSTS:DEMAND_DATA_RD_HIT           L2 requests:Demand Data Read requests that hit L2 cache
+   MEM_UOPS_RETIRED:ALL_LOADS            Memory uops retired (Precise Event):All load uops retired
+   PM_ENERGY:NODE                        Compute node accumulated energy
+   CYCLES_RTC                            User Cycles (approx, from rtc)
+
+  This set of HWPC events requires multiplexing, which reduces
+  the accuracy of the data collected. If the best possible
+  accuracy is needed, you should rerun to collect data for
+  smaller sets of events, that do not require multiplexing.
+
+Number of traced functions:  63
+
+  (To see the list, specify:  -s traced_functions=show)
+
+
+=============================  Warnings  =============================
+
+
+    No .apa file with pat_build option suggestions was generated
+    because no samples appear to have been taken in USER functions.
+
